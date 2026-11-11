@@ -13,13 +13,10 @@ for i in range(n):
         if not visited[j] and (u == -1 or dist[j] < dist[u]):
             u = j
     visited[u] = True
-
     for v in range(n):
         if graph[u][v] > 0 and not visited[v]:
             new = dist[u] + graph[u][v]
-
             if new < dist[v]:
                 dist[v] = new
-
 print("Shortest distances from source:")
 print(dist)
