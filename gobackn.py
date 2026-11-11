@@ -5,24 +5,21 @@ w = int(input("Enter window size: "))
 i = 0
 
 while i < n:
-    print("\nSending frames:")
+    print("Sending frames:")
 
-    for j in range(i, min(i + w, n)):
+    for j in range(i, min(i+w, n)):
         print("Frame", j, "sent")
 
-    lost = int(input("Enter lost frame number (-1 for no loss): "))
+    lost = int(input("Enter lost frame (-1 for no loss): "))
 
     if lost == -1:
-        print("All frames received successfully")
-        i = min(i + w, n)
-
+        print("All frames received")
     else:
-        print("Frame", lost, "lost!")
-        print("Go Back N: Retransmitting frames")
+        print("Retransmitting frames")
 
-        for j in range(lost, min(i + w, n)):
+        for j in range(lost, min(i+w, n)):
             print("Frame", j, "resent")
 
-        i = min(i + w, n)
+    i = min(i+w, n)
 
-print("\nAll frames transmitted successfully!")
+print("Transmission completed")
